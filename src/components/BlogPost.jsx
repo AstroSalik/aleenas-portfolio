@@ -1,17 +1,41 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
+import imageUrlBuilder from '@sanity/image-url';
 import { client } from '../sanityClient';
 import Nav from './Nav';
 
-// 1. Create a "rules" object for how to style her rich text
+// 1. Set up the image builder
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source);
+}
+
+// 2. Create a "rules" object for how to style her rich text
 const richTextStyles = {
+  // Add 'types' to handle non-text blocks like images
+  types: {
+    image: ({ value }) => {
+      if (!value?.asset?._ref) return null;
+      return (
+        <img
+          alt={value.alt || 'Blog post image'}
+          loading="lazy"
+          src={urlFor(value).width(800).fit('max').auto('format').url()}
+          className="my-8 rounded-lg shadow-lg w-full max-w-2xl object-cover"
+        />
+      );
+    },
+  },
   block: {
     // Every time she makes a normal paragraph, it uses these classes
     normal: ({children}) => <p className="mb-6 text-lg leading-relaxed text-saffron-text/90 font-body">{children}</p>,
     
+    // Fix for the Top Heading (H1)
+    h1: ({children}) => <h1 className="text-4xl md:text-5xl font-display text-saffron-primary mt-12 mb-6">{children}</h1>,
+    
     // Every time she makes an H2 heading, it uses your sophisticated font and color
-    h2: ({children}) => <h2 className="text-3xl font-display text-saffron-primary mt-12 mb-6">{children}</h2>,
+    h2: ({children}) => <h2 className="text-3xl font-display text-saffron-primary mt-10 mb-4">{children}</h2>,
     
     h3: ({children}) => <h3 className="text-2xl font-display text-saffron-text mt-8 mb-4">{children}</h3>,
     
