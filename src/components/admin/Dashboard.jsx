@@ -52,14 +52,22 @@ export default function Dashboard() {
       {/* Quick Actions */}
       <section>
          <h2 className="font-display text-2xl text-saffron-text mb-6 pb-2 border-b border-saffron-surface">Actions</h2>
-         <div className="flex gap-4 flex-wrap">
-           <Link to="/admin/books" className="px-6 py-3 bg-saffron-primary/10 border border-saffron-primary text-saffron-primary hover:bg-saffron-primary hover:text-saffron-bg transition-colors font-mono uppercase tracking-widest text-sm font-bold">
-             Manage Books
-           </Link>
-           <Link to="/admin/content" className="px-6 py-3 bg-saffron-surface/50 border border-saffron-surface text-saffron-text hover:bg-saffron-surface transition-colors font-mono uppercase tracking-widest text-sm">
-             Edit Site Copy
-           </Link>
-         </div>
+          <div className="flex gap-4 flex-wrap">
+            <a 
+              href="https://aleenas-library.sanity.studio/" 
+              target="_blank" 
+              rel="noreferrer noopener"
+              className="px-6 py-3 bg-saffron-primary text-saffron-bg hover:bg-[#c99026] transition-colors font-mono uppercase tracking-widest text-sm font-bold shadow-[0_4px_20px_rgba(232,168,48,0.2)] flex items-center gap-2"
+            >
+              <span>✨</span> Write & Manage Blogs
+            </a>
+            <Link to="/admin/books" className="px-6 py-3 bg-saffron-primary/10 border border-saffron-primary text-saffron-primary hover:bg-saffron-primary hover:text-saffron-bg transition-colors font-mono uppercase tracking-widest text-sm font-bold">
+              Manage Books
+            </Link>
+            <Link to="/admin/content" className="px-6 py-3 bg-saffron-surface/50 border border-saffron-surface text-saffron-text hover:bg-saffron-surface transition-colors font-mono uppercase tracking-widest text-sm">
+              Edit Site Copy
+            </Link>
+          </div>
       </section>
     </div>
   );

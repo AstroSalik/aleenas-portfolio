@@ -199,6 +199,14 @@ export default function AdminPortal() {
         </nav>
 
         <div className="px-6 pt-6 border-t border-saffron-surface mt-auto space-y-4">
+          <a
+            href="https://aleenas-library.sanity.studio/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex items-center text-sm font-mono tracking-wider text-saffron-primary hover:text-saffron-text transition-colors group"
+          >
+            <span className="mr-2 group-hover:animate-pulse">✨</span> Write & Manage Blogs
+          </a>
           <Link
             to="/"
             className="flex items-center text-sm font-mono tracking-wider text-saffron-text/60 hover:text-saffron-primary transition-colors"
