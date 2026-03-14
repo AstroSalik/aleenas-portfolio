@@ -1,0 +1,135 @@
+// 12 Book Slots for Aleena's Library
+const baseBooks = [
+  {
+    id: "kashaf",
+    title: "KASHAF: Between Ink and Ilham",
+    year: 2025,
+    role: "Co-Author",
+    coverImage: "/kashaf.jpg",
+    tagline: "Between ink and ilham lies a sacred stillness",
+    description: "A space where human longing meets divine whisper. Born from pens that write not just with ink, but with intention.",
+    moodTags: ["longing", "divine", "stillness"],
+    pullQuote: "Between ink and ilham lies a sacred stillness — a space where human longing meets divine whisper.",
+    whoIsItFor: [
+      "For those who write in silence",
+      "For those who have felt the sacred in the ordinary",
+      "For those who know that words are prayers"
+    ],
+    authorNote: "",
+    purchaseLink: "https://amzn.in/d/08JP9BPw",
+    published: true,
+  },
+  {
+    id: "under-new-stars",
+    title: "Under the New Stars",
+    year: 2026,
+    role: "Co-Author",
+    coverImage: "/under-stars.jpeg",
+    tagline: "For the ones who are chasing new beginnings",
+    description: "An anthology where emerging voices shine, where stories find their first home, and readers discover what it means to start again.",
+    moodTags: ["beginnings", "hope", "emergence"],
+    pullQuote: "A space where emerging voices shine, where stories find their first home.",
+    whoIsItFor: [
+      "For those chasing new beginnings",
+      "For those who believe in first chapters",
+      "For those who look up when lost"
+    ],
+    authorNote: "",
+    purchaseLink: "https://amzn.in/d/07tHJ0EI",
+    published: true,
+  },
+  {
+    id: "felt-everything",
+    title: "For the Ones Who Felt Everything",
+    year: 2025,
+    role: "Author",
+    coverImage: "/for-the-ones.jpeg",
+    tagline: "Vulnerability as both a wound and a strength",
+    description: "An anthology for those who never learned how to feel halfway. These pages hold quiet confessions, unspoken griefs, small joys, and the kind of emotions that linger long after they are felt.",
+    moodTags: ["vulnerability", "resilience", "confessions"],
+    pullQuote: "Feeling deeply is not a flaw, but a form of courage.",
+    whoIsItFor: [
+      "For those who never learned to feel halfway",
+      "For those seeking gentle resilience",
+      "For those who know vulnerability is strength"
+    ],
+    authorNote: "",
+    purchaseLink: "https://store.pothi.com/book/compiled-team-tccm-ones-who-felt-everything/",
+    published: true,
+  },
+  {
+    id: "love-minus-one",
+    title: "Love at Minus One",
+    year: 2025,
+    role: "Author",
+    coverImage: "/love-at-1.jpeg",
+    tagline: "Some hearts freeze before they ever break.",
+    description: "A winter themed anthology poetry and prose about love after it breaks. These explore the fragile space between longing and letting go between almost and never.",
+    moodTags: ["winter", "heartbreak", "longing"],
+    pullQuote: "At minus one, love does not disappear, it lingers, colder, sharper, unforgettable.",
+    whoIsItFor: [
+      "For those who loved after the break",
+      "For those navigating the space between almost and never",
+      "For those who loved when hope fell cold"
+    ],
+    authorNote: "",
+    purchaseLink: "",
+    published: true,
+  },
+  {
+    id: "moonflowers",
+    title: "Moonflowers and Manuscripts",
+    year: 2025,
+    role: "Author",
+    coverImage: "/manuscripts.jpeg",
+    tagline: "A Garden of Voices blooming under the night sky",
+    description: "A soulful anthology that brings together diverse writers who share their emotions, stories, dreams, and reflections. Each piece is like a flower in a garden—unique in its fragrance, color, and meaning.",
+    moodTags: ["soulful", "nature", "reflection"],
+    pullQuote: "Every page invites you to pause, feel, and connect with the voices that bloom under the soft glow of creativity.",
+    whoIsItFor: [
+      "For those who find clarity in the quiet hours",
+      "For those who seek a landscape of diverse feelings",
+      "For anyone who believes words can blossom"
+    ],
+    authorNote: "",
+    purchaseLink: "https://amzn.in/d/0gTnG2Gl",
+    published: true,
+  },
+  {
+    id: "aurora-words",
+    title: "Aurora of Words",
+    year: 2025,
+    role: "Author",
+    coverImage: "/arora.jpeg",
+    tagline: "Voices rising together to illuminate the horizon",
+    description: "A soulful anthology that brings together diverse voices, emotions, and perspectives. Just like the first light of dawn, each piece reflects hope, expression, and the power of storytelling.",
+    moodTags: ["hope", "luminosity", "sunrise"],
+    pullQuote: "Each contribution adds a unique hue to this literary sunrise, creating a beautiful blend of imagination.",
+    whoIsItFor: [
+      "For those who find light in expression",
+      "For those who believe in the power of shared stories",
+      "For anyone looking for a literary dawn"
+    ],
+    authorNote: "",
+    purchaseLink: "https://amzn.in/d/09Qv5ujL",
+    published: true,
+  },
+  // 6 placeholder slots to be filled by Admin
+  ...Array.from({ length: 6 }).map((_, i) => ({
+    id: `placeholder-${i + 7}`,
+    title: `Untitled Work ${i + 7}`,
+    year: new Date().getFullYear(),
+    role: "Author",
+    coverImage: "",
+    tagline: "",
+    description: "",
+    moodTags: [],
+    pullQuote: "",
+    whoIsItFor: ["", "", ""],
+    authorNote: "",
+    purchaseLink: "",
+    published: false,
+  }))
+];
+
+export default baseBooks;
