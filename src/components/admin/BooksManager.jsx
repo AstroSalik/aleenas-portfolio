@@ -10,12 +10,45 @@ export default function BooksManager() {
     setEditingBook({ ...book }); // Clone for editing
   };
 
+  const handleAdd = () => {
+    setEditingBook({
+      id: Date.now().toString(),
+      title: "New Book Title",
+      year: new Date().getFullYear(),
+      role: "Author",
+      coverImage: "",
+      tagline: "",
+      description: "",
+      pullQuote: "",
+      whoIsItFor: ["", "", ""],
+      moodTags: [],
+      authorNote: "",
+      purchaseLink: "",
+      published: false
+    });
+  };
+
   const handleSave = () => {
-    const newBooks = books.map(b => b.id === editingBook.id ? editingBook : b);
+    const existingIndex = books.findIndex(b => b.id === editingBook.id);
+    let newBooks;
+    if (existingIndex >= 0) {
+      newBooks = books.map(b => b.id === editingBook.id ? editingBook : b);
+    } else {
+      newBooks = [...books, editingBook];
+    }
     saveBooks(newBooks);
     setEditingBook(null);
     setShowSaved(true);
     setTimeout(() => setShowSaved(false), 2000);
+  };
+
+  const handleDelete = (id) => {
+    if (window.confirm('Are you sure you want to delete this book? This cannot be undone.')) {
+      const newBooks = books.filter(b => b.id !== id);
+      saveBooks(newBooks);
+      setShowSaved(true);
+      setTimeout(() => setShowSaved(false), 2000);
+    }
   };
 
   const handleCancel = () => setEditingBook(null);
@@ -146,15 +179,23 @@ export default function BooksManager() {
           <p className="font-mono text-xs text-saffron-text/50 uppercase tracking-widest">Manage the 12 Book Slots</p>
         </div>
         </div>
-        <button 
-          onClick={() => {
-             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(books, null, 2));
-             const dl = document.createElement('a'); dl.setAttribute("href", dataStr); dl.setAttribute("download", "aleena-books-backup.json"); dl.click();
-          }}
-          className="font-mono text-xs tracking-widest text-saffron-secondary hover:text-saffron-text"
-        >
-           ↓ Export Data
-        </button>
+        <div className="flex items-center gap-6">
+          <button 
+            onClick={handleAdd}
+            className="bg-saffron-primary/10 border border-saffron-primary text-saffron-primary px-4 py-2 font-mono uppercase text-sm tracking-widest hover:bg-saffron-primary hover:text-saffron-bg transition-all"
+          >
+            + Add New Book
+          </button>
+          <button 
+            onClick={() => {
+               const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(books, null, 2));
+               const dl = document.createElement('a'); dl.setAttribute("href", dataStr); dl.setAttribute("download", "aleena-books-backup.json"); dl.click();
+            }}
+            className="font-mono text-xs tracking-widest text-saffron-secondary hover:text-saffron-text"
+          >
+             ↓ Export Data
+          </button>
+        </div>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -165,12 +206,21 @@ export default function BooksManager() {
             </div>
             <h3 className="font-display text-2xl text-saffron-text mb-2 leading-tight">{book.title}</h3>
             <span className="font-mono text-xs text-saffron-text/50 mb-6">{book.year} · {book.role}</span>
-            <button 
-              onClick={() => handleEdit(book)}
-              className="mt-auto self-start font-mono text-sm uppercase tracking-widest text-saffron-primary hover:text-saffron-text transition-colors"
-            >
-              Edit Book →
-            </button>
+            <div className="mt-auto self-stretch flex justify-between items-center pt-6 border-t border-saffron-surface/10">
+              <button 
+                onClick={() => handleEdit(book)}
+                className="font-mono text-sm uppercase tracking-widest text-saffron-primary hover:text-saffron-text transition-colors"
+              >
+                Edit Book →
+              </button>
+              <button 
+                onClick={() => handleDelete(book.id)}
+                className="font-mono text-[10px] uppercase tracking-widest text-red-500/50 hover:text-red-500 transition-colors"
+                title="Delete Book"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         ))}
       </div>

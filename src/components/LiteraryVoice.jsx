@@ -76,7 +76,7 @@ export default function LiteraryVoice() {
             <motion.div 
               animate={{ x: [0, -2000] }}
               transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-              className="inline-block"
+              className="inline-block will-change-transform"
             >
               {[...content.voice.influences, ...content.voice.influences].map((influence, idx) => (
                 <span key={idx} className="font-display italic text-4xl md:text-6xl text-saffron-text/15 mx-12">

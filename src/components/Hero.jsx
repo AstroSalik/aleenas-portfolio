@@ -41,7 +41,7 @@ export default function Hero() {
     <section id="hero" className="relative w-full h-screen bg-saffron-bg overflow-hidden flex items-center justify-center">
       {/* Background Particles */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-saffron-text w-1 h-1"
@@ -78,7 +78,7 @@ export default function Hero() {
            variants={inkSpreadVariants}
            initial="hidden"
            animate="visible"
-           className="w-[120vw] h-[120vw] rounded-full bg-gradient-to-tr from-[#1a0a0e] via-[#c47a8a]/20 to-[#e8a830]/10 mix-blend-luminosity blur-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+           className="w-[120vw] h-[120vw] rounded-full bg-gradient-to-tr from-[#1a0a0e] via-[#c47a8a]/20 to-[#e8a830]/10 mix-blend-luminosity blur-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform"
         />
       </div>
 
