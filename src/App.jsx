@@ -12,6 +12,7 @@ import AdminPortal from './components/admin/AdminPortal';
 import FullLibrary from './components/FullLibrary';
 import BlogGrid from './components/BlogGrid';
 import BlogPost from './components/BlogPost';
+import HomeBlogSection from './components/HomeBlogSection';
 import './index.css';
 
 function MainPortfolio() {
@@ -21,8 +22,9 @@ function MainPortfolio() {
       <Hero />
       <About />
       <LiteraryVoice />
-      <Library />
       <Recognition />
+      <Library />
+      <HomeBlogSection />
       <Classroom />
       <Contact />
     </>
