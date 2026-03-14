@@ -1,16 +1,76 @@
-# React + Vite
+# Aleena Tariq — Literary Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Banner](public/banner.png)
 
-Currently, two official plugins are available:
+> **"Words from the Valley. Stories for the world."**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A bespoke, high-performance literary portfolio designed by **Salik Riyaz** for **Aleena Tariq**, a Kashmir-born writer, poet, and educator. This platform showcases her diverse literary contributions, ranging from soul-stirring poetry anthologies to investigative academic research.
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **🎭 Cinematic Hero Section**: A deep-saffron themed, motion-heavy entrance featuring a dynamic typographic introduction and blended portraiture.
+- **📚 Dynamic Library**: A curated collection of works including *Moonflowers and Manuscripts* and *Aurora of Words*, featuring detailed modals and direct purchase links.
+- **🏆 Recognition & Awards**: A specialized section highlighting honors and accolades with a unique circular tracking "Seal of Honor."
+- **🏫 The Classroom**: Showcasing Aleena's work as an educator and workshop mentor, bridging the gap between literature and intellectual curiosity.
+- **🔒 Secure Admin Portal**: A custom-built, hardened back-office for managing books, site content, and awards in real-time without touching the code.
+  - *Security features*: SHA-256 password hashing, rate-limiting, and session expiry.
+- **📱 Fully Responsive**: Tailored experiences for Mobile, Tablet, and Desktop with fluid animations via Framer Motion.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4.0](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router 7](https://reactrouter.com/)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AstroSalik/aleenas-portfolio.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd aleenas-portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Production Build
+To create a production-optimized bundle:
+```bash
+npm run build
+```
+The optimized assets will be generated in the `dist/` directory.
+
+---
+
+## 🧪 Admin Access
+The admin portal is located at `/admin`. It is secured via a hashed password and handles all primary content management through local storage persistence (ready for syncing with a backend like Firebase or Supabase).
+
+---
+
+## 📄 License
+This project is for personal portfolio use. All literary content, poetry, and prose are copyright © Aleena Tariq.
+
+---
+
+**“Between the blooming of moonflowers and the quiet of the night, every story leaves an imprint.”**
