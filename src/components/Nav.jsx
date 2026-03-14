@@ -19,12 +19,13 @@ export default function Nav() {
   }, []);
 
   const links = [
-    { name: 'About', href: '#about' },
-    { name: 'Voice', href: '#voice' },
-    { name: 'Library', href: '#library' },
-    { name: 'Recognition', href: '#recognition' },
-    { name: 'Classroom', href: '#classroom' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'Voice', href: '/#voice' },
+    { name: 'Library', href: '/#library' },
+    { name: 'Recognition', href: '/#recognition' },
+    { name: 'Classroom', href: '/#classroom' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (

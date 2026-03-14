@@ -10,6 +10,8 @@ import Classroom from './components/Classroom';
 import Contact from './components/Contact';
 import AdminPortal from './components/admin/AdminPortal';
 import FullLibrary from './components/FullLibrary';
+import BlogGrid from './components/BlogGrid';
+import BlogPost from './components/BlogPost';
 import './index.css';
 
 function MainPortfolio() {
@@ -34,6 +36,8 @@ function App() {
       <Routes>
         <Route path="/admin/*" element={<AdminPortal />} />
         <Route path="/library" element={<FullLibrary />} />
+        <Route path="/blog" element={<BlogGrid />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/" element={<MainPortfolio />} />
       </Routes>
     </Router>
