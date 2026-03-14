@@ -199,14 +199,12 @@ export default function AdminPortal() {
         </nav>
 
         <div className="px-6 pt-6 border-t border-saffron-surface mt-auto space-y-4">
-          <a
-            href="/"
-            target="_blank"
-            rel="noreferrer noopener"
+          <Link
+            to="/"
             className="flex items-center text-sm font-mono tracking-wider text-saffron-text/60 hover:text-saffron-primary transition-colors"
           >
-            <span className="mr-2">↗</span> Preview Site
-          </a>
+            <span className="mr-2">←</span> View Public Site
+          </Link>
           <button
             onClick={handleLogout}
             className="flex items-center text-sm font-mono tracking-wider text-saffron-secondary hover:text-red-400 transition-colors"
